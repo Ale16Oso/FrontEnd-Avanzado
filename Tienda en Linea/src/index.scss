@@ -1,0 +1,8 @@
+@import './sass/abstracts/_colors.scss';
+@import './sass/base/base.scss';
+@import './sass/abstracts/mixins.scss';
+@import './sass/base/base';
+
+h1 {
+  color: $primary-color
+}
