@@ -1,4 +1,5 @@
 import { useEffect, useState} from 'react'
+import './Items.scss'
 
 export default function Items() {
 
@@ -21,7 +22,6 @@ export default function Items() {
              </div>
        ))
 }
-
     </div>
     </section>
   )

@@ -1,10 +1,11 @@
 .item-container {
+    margin-left: 20%;
     .items {
         display: flex;
         flex-wrap: wrap;
         margin: 10px;
         .item {
-            width: 301px;
+            width: 300px;
             background-color: white;
             margin: 8px;
             border-radius: 16px;
