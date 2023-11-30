@@ -1,4 +1,4 @@
-.item-container {
+.items-container {
     margin-left: 20%;
     .items {
         display: flex;
@@ -11,6 +11,7 @@
             border-radius: 16px;
             img {
                 width: 100%;
+                //para que las imagenes se vean del mismo tamaño
                 height: 300px;
                 border-radius: 16px;
             }

@@ -1,8 +1,16 @@
-@import './sass/abstracts/_colors.scss';
+@import './sass/partials/colors.scss';
 @import './sass/base/base.scss';
-@import './sass/abstracts/mixins.scss';
+@import './sass/partials/mixins.scss';
 @import './sass/base/base';
 
 h1 {
   color: $primary-color
+}
+
+.main-content {
+  display: flex;
+  position: absolute;
+  .main-aside{
+    position: fixed;
+  }
 }
