@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../login/login.scss'
 
 export default function Login() {
     //Paso 2: Crear estados para guardar los valores del formulario
@@ -20,13 +21,13 @@ export default function Login() {
 
     //Paso 1: Crear formulario base
       return (
-        <div>
+        <div className='login-container'>  
           <div>
             <h1>Inicia tu sesión</h1>
             <form onSubmit={() => {}}>
                 {/*Paso 3: Guardar cada cambio de cada input en su estado correspondiente */}
-                <div>
-                    <label htmlFor="email">Email</label>
+                <div className='login__content'>
+                    <label htmlFor="email">Email: </label>
                     <input
                         type="text"
                         name="email"
@@ -35,9 +36,9 @@ export default function Login() {
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
                     />
-                </div>
-                <div>
-                <label htmlFor="password">Password</label>
+                </div >
+                <div className='login__content'>
+                <label htmlFor="password">Password: </label>
                 <input 
                     type={mostrarPassword ? 'text' : 'password'}
                     name="password"
@@ -46,10 +47,10 @@ export default function Login() {
                     onChange={(evento) => setPassword(evento.target.value)}
                 />
                 <button type="button" onClick={() => setMostrarPassword(!mostrarPassword)}>
-                    {mostrarPassword ? 'ocultar' : 'mostrar'}
+                    {mostrarPassword ? '📸 ocultar' : '📸'}
                 </button>
             </div>
-                <div>
+                <div className='login-botton'>
                     <button type="submit">
                         Iniciar Sesión
                     </button>
