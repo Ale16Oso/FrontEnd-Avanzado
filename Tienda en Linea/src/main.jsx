@@ -21,9 +21,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <NavBar />
       <div className='main-content'>
-        {/* <Aside className="main-aside"/> */}
+        <Aside className="main-aside"/>
       </div>
-      <RoutesIndex />
+        <RoutesIndex />
     </BrowserRouter>
   </React.StrictMode>,
 )
