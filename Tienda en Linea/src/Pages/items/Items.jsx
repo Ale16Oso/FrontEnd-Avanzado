@@ -1,28 +1,43 @@
-import { useEffect, useState} from 'react'
-import './Items.scss'
+import { useEffect, useState } from "react";
+import { getItems } from "../../services/itemService";
+import { Link } from 'react-router-dom'
+import "./Items.scss";
 
 export default function Items() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const [items, setItems] = useState([])
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await getItems();
+        console.log(response.data);
+        setItems(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log("el error se producjo por ", error);
+      }
+    };
+    getData();
+  }, []);
 
-    useEffect (() => {
-        fetch('https://api-pelis-back.onrender.com/celulares')
-        .then (res => res.json())
-        .then(data => setItems(data.celulares))
-}, [])
-
-  return (
-    <section className='items-container'>
-    <div className='items'>
-        {items.map (item => (
-            <div key={item.title} className='item'>
-                <img src={item.image} />
-                <h3>{item.title}</h3>
-                <p>{item.price}</p>
-             </div>
-       ))
-}
-    </div>
+  if (loading) {
+    return <h1>Loaging...</h1>;
+  } else {
+    return (
+    <section className="items-container">
+      <div className="items">
+        {items.map((item) => (
+         <Link to={`/item/${item.id}`} key={item.id}>
+          <div  className="item">
+            <img src={item.image} />
+            <h3>{item.product_name}</h3>
+            <p>{item.price}</p>
+          </div>
+         </Link>
+        ))}
+      </div>
     </section>
-  )
+    )
+  }
 }
